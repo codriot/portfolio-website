@@ -1,262 +1,399 @@
 "use client"
 
-import {FaHtml5,FaCss3,FaJs, FaReact,FaFigma,FaNodeJs} from "react-icons/fa"
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaFigma,
+  FaNodeJs,
+  FaNode,
+  FaGit,
+  FaPython,
+  FaJava,
+  FaDocker,
+  FaDatabase
+} from "react-icons/fa"
 
-import {SiNextdotjs, SiTailwindcss} from "react-icons/si"
+import {
+  SiNextdotjs,
+  SiTailwindcss,
+  SiTypescript,
+  SiMongodb,
+  SiPostgresql,
+  SiRedux,
+  SiFirebase
+} from "react-icons/si"
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+import { Card, CardContent } from "@/components/ui/card"
+import {Tabs,TabsContent,TabsList,TabsTrigger} from "@/components/ui/tabs"
+import { motion } from "framer-motion";
 
 export const about = {
-  title:"About me",
-  description:"lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  info:[
+  title: "Hakkımda",
+  description: "Modern web teknolojilerinde uzmanlaşmış bir Full Stack Geliştiriciyim. React, Next.js ve Node.js kullanarak ölçeklenebilir web uygulamaları geliştiriyorum. Hem frontend hem de backend geliştirmede güçlü bir temele sahip olarak, verimli ve kullanıcı dostu çözümler üretmeye odaklanıyorum.",
+  info: [
     {
-      fieldName:"Name",
-      fieldValue:"Luke Coleman"
+      fieldName: "İsim",
+      fieldValue: "Yusuf Akçal"
     },
     {
-      fieldName:"Name",
-      fieldValue:"Luke Coleman"
+      fieldName: "Konum",
+      fieldValue: "İstanbul, Türkiye"
     },
     {
-      fieldName:"Name",
-      fieldValue:"Luke Coleman"
+      fieldName: "Eğitim",
+      fieldValue: "Bilgisayar Mühendisliği, Balıkesir Üniversitesi"
     },
     {
-      fieldName:"Name",
-      fieldValue:"Luke Coleman"
+      fieldName: "Pozisyon",
+      fieldValue: "Full Stack Geliştirici"
     },
     {
-      fieldName:"Name",
-      fieldValue:"Luke Coleman"
+      fieldName: "Deneyim",
+      fieldValue: "Junior"
     },
     {
-      fieldName:"Name",
-      fieldValue:"Luke Coleman"
-    },
+      fieldName: "Diller",
+      fieldValue: "Türkçe (Anadil), İngilizce (Ortalama))"
+    }
   ]
 };
 
 export const experience = {
   icon:"/assets/resume/badge.svg",
-  title:"Experience",
-  description:"lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  title:"Deneyimler",
+  description:"Modern web teknolojileri ve yazılım geliştirme alanında edindiğim deneyimler ile kullanıcı odaklı, ölçeklenebilir ve sürdürülebilir çözümler üretiyorum. Agile metodolojileri benimseyerek, takım çalışmasına ve sürekli öğrenmeye önem veriyorum.",
   items:[
     {
       company:"Tech Solution Inc",
       position:"Frontend Developer",
       duration:"2022-present",
+      description: "Modern web teknolojileri kullanarak kullanıcı arayüzleri geliştirdim ve performans optimizasyonları gerçekleştirdim.",
+      technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS"]
     },
     {
       company:"E commerce Startup",
-      position:"Frelance web developer ",
+      position:"Freelance Web Developer",
       duration:"2020-2021",
+      description: "E-ticaret platformları için özel çözümler geliştirdim ve mevcut sistemleri optimize ettim.",
+      technologies: ["Node.js", "React", "MongoDB", "Express.js"]
     },
     {
       company:"Tech Academy",
-      position:"Teaching Aassistant",
+      position:"Teaching Assistant",
       duration:"2019-2020",
+      description: "Web geliştirme kurslarında öğrencilere mentorluk yaptım ve teknik destek sağladım.",
+      technologies: ["HTML", "CSS", "JavaScript", "Git"]
     },
     {
       company:"Software Development",
-      position:"Teaching Aassistant",
+      position:"Teaching Assistant",
       duration:"2019-2020",
-    },
-  ]
-};
-
-export const education = {
-  icon:"/assets/resume/badge.svg",
-  title:"My education",
-  description:"lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  items:[
-    {
-      institution:"Online Course Platform",
-      degree:"Frontend Developer",
-      duration:"2022-present",
-    },
-    {
-      institution:"Codacademy",
-      degree:"Front end Track ",
-      duration:"2022",
-    },
-    {
-      institution:"Tech Academy",
-      degree:"Teaching Aassistant",
-      duration:"2019-2020",
-    },
-    {
-      institution:"Software Development",
-      degree:"Teaching Aassistant",
-      duration:"2019-2020",
-    },
-    {
-      institution:"Software Development",
-      degree:"Teaching Aassistant",
-      duration:"2019-2020",
-    },
-    {
-      institution:"Software Development",
-      degree:"Teaching Aassistant",
-      duration:"2019-2020",
+      description: "Yazılım geliştirme süreçlerinde öğrencilere rehberlik ettim ve proje yönetiminde destek oldum.",
+      technologies: ["Python", "Java", "SQL", "Agile"]
     },
   ]
 };
 
 export const skills = {
-  title:"My skills",
-  description:"lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  skillList:[
+  title: "Teknik Yetenekler",
+  description: "Modern web teknolojileri ve yazılım geliştirme alanında sürekli kendimi geliştirmeye odaklanıyorum. Frontend ve backend teknolojilerinde geniş bir yelpazede deneyim sahibiyim. Yeni teknolojileri öğrenmeye ve mevcut bilgilerimi güncellemeye özen gösteriyorum. Projelerimde en güncel ve verimli araçları kullanarak, performans ve kullanıcı deneyimini optimize ediyorum.",
+  skillList: [
     {
-      icon:<FaHtml5/>,
-      name:"HTML",
+      icon: FaHtml5,
+      name: "HTML5",
+      color: "#E34F26"
     },
     {
-      icon:<FaCss3/>,
-      name:"Css 3",
+      icon: FaCss3Alt,
+      name: "CSS3",
+      color: "#1572B6"
     },
     {
-      icon:<FaJs/>,
-      name:"Javascript",
+      icon: FaJs,
+      name: "JavaScript",
+      color: "#F7DF1E"
     },
     {
-      icon:<FaReact/>,
-      name:"React",
+      icon: SiTypescript,
+      name: "TypeScript",
+      color: "#3178C6"
     },
     {
-      icon:<SiNextdotjs/>,
-      name:"Next js",
+      icon: FaReact,
+      name: "React",
+      color: "#61DAFB"
     },
     {
-      icon:<SiTailwindcss/>,
-      name:"tailwind js",
+      icon: SiNextdotjs,
+      name: "Next.js",
+      color: "#000000"
     },
     {
-      icon:<FaNodeJs/>,
-      name:"node js",
+      icon: SiTailwindcss,
+      name: "Tailwind CSS",
+      color: "#06B6D4"
     },
     {
-      icon:<FaFigma/>,
-      name:"figma",
+      icon: FaNodeJs,
+      name: "Node.js",
+      color: "#339933"
     },
+    {
+      icon: SiMongodb,
+      name: "MongoDB",
+      color: "#47A248"
+    },
+    {
+      icon: SiPostgresql,
+      name: "PostgreSQL",
+      color: "#4169E1"
+    },
+    {
+      icon: SiRedux,
+      name: "Redux",
+      color: "#764ABC"
+    },
+    {
+      icon: SiFirebase,
+      name: "Firebase",
+      color: "#FFCA28"
+    },
+    {
+      icon: FaGit,
+      name: "Git",
+      color: "#F05032"
+    },
+    {
+      icon: FaPython,
+      name: "Python",
+      color: "#3776AB"
+    },
+    {
+      icon: FaJava,
+      name: "Java",
+      color: "#007396"
+    },
+    {
+      icon: FaDocker,
+      name: "Docker",
+      color: "#2496ED"
+    }
   ]
 };
 
-import {Tabs,TabsContent,TabsList,TabsTrigger} from "@/components/ui/tabs"
-
-import { Tooltip,TooltipContent,TooltipProvider,TooltipTrigger } from "@/components/ui/tooltip";
-
-import {ScrollArea} from "@/components/ui/scroll-area"
-
-import { motion } from "framer-motion";
-
 const page = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1,transition:{delay:2.4,duration:0.4,ease:"easeIn"} }}
-      exit={{ opacity: 0 }}
-      className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0">
-        <div className="container mx-auto">
-          <Tabs defaultValue="Experience" className="flex flex-col xl:flex-row gap-[60px]">
-            <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 xl:w-[300px] gap-6">
-              <TabsTrigger  value="experience">Expreience</TabsTrigger>
-              <TabsTrigger  value="education">Education</TabsTrigger>
-              <TabsTrigger  value="skilss">Skills</TabsTrigger>
-              <TabsTrigger  value="about">About Me</TabsTrigger>
-            </TabsList>
-            <div className="min-h-[70vh] w-full" >
-              <TabsContent value="experience" className="w-full">
-                <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                  <h3 className="text-4xl font-bold">{experience.title}</h3>
-                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{experience.description}</p>
-                  <ScrollArea className="h-400px">
-                    <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
-                      {experience.items.map((item,index)=>(
-                        <li key={index} className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
-                          <span className="text-accent">{item.duration}</span>
-                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">{item.position}</h3>
-                          <div className="flex items-center gap-3">
-                            <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                            <p className="text-white/60">{item.degree}</p>
-                          </div>
-                        </li>
-                      ))}
-                    </ul>
-                  </ScrollArea>
-                </div>
-              </TabsContent>
-                      
-              <TabsContent value="education" className="w-full">
-                <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                    <h3 className="text-4xl font-bold">{education.title}</h3>
-                    <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{education.description}</p>
-                    <ScrollArea className="h-[400px]">
-                      <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
-                        {education.items.map((item,index)=>{
-                          return(
-                          <li key={index} className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
-                            <span className="text-accent">{item.duration}</span>
-                            <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">{item.degree}</h3>
-                            <div className="flex items-center gap-3">
-                              <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                              <p className="text-white/60">{item.institution}</p>
-                            </div>
-                          </li>
-                          );
-                        })}
-                      </ul>
-                    </ScrollArea>
-                  </div>
-              </TabsContent>
+    <div className="min-h-screen pt-20 pb-12">
+      <div className="container mx-auto">
+        <Tabs defaultValue="experience" className="flex flex-col">
+          <TabsList className="flex justify-center w-full gap-6 mb-16">
+            <TabsTrigger 
+              value="experience" 
+              className="hover:bg-accent/20 transition-colors duration-300 data-[state=active]:bg-accent data-[state=active]:text-black"
+            >
+              Deneyim
+            </TabsTrigger>
+            <TabsTrigger 
+              value="skills"
+              className="hover:bg-accent/20 transition-colors duration-300 data-[state=active]:bg-accent data-[state=active]:text-black"
+            >
+              Yetenekler
+            </TabsTrigger>
+            <TabsTrigger 
+              value="about"
+              className="hover:bg-accent/20 transition-colors duration-300 data-[state=active]:bg-accent data-[state=active]:text-black"
+            >
+              Hakkımda
+            </TabsTrigger>
+          </TabsList>
 
-              <TabsContent value="skilss" className="w-full h-full">
-                <div className="flex flex-col gap-[30px] ">
-                  <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                    <h3 className="text-4xl font-bold">{skills.title}</h3>
-                    <p className="max-w-[600px] text-white/60 mx-auto xl:mx-8">{skills.description}</p>
-                  </div>
-                  <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
-                    {skills.skillList.map((skill,index)=>{
-                      return(
-                      <li key={index} className="flex items-center gap-3">
-                        <TooltipProvider delayDuration={100}>
-                            <Tooltip>
-                              <TooltipTrigger className="w-full h-[150px] bg-[#232329] group rounded-xl flex items-center justify-center">
-                                <div className="text-6xl group:hover:text-accent transition-all duration-300">
-                                  {skill.icon}
-                                </div>
-                              </TooltipTrigger>
-                              <TooltipContent >
-                                <p className="capitalize">{skill.name}</p>
-                              </TooltipContent>
-                            </Tooltip>
-                          </TooltipProvider>
+          <div className="min-h-[calc(100vh-250px)] w-full">
+            <TabsContent value="experience" className="w-full h-full">
+              <div className="flex flex-col h-full">
+                <div className="max-w-[800px] mx-auto mb-16 text-center">
+                  <motion.h3 
+                    className="text-4xl font-bold mb-6"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    {experience.title}
+                  </motion.h3>
+                  <motion.p 
+                    className="text-white/60 text-lg leading-relaxed"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                  >
+                    {experience.description}
+                  </motion.p>
+                </div>
+
+                <div className="max-w-[900px] mx-auto px-4">
+                  <ul className="flex flex-col">
+                    {experience.items.map((item,index)=>(
+                      <motion.li 
+                        key={index} 
+                        className={`bg-[#232329] p-10 rounded-xl flex flex-col gap-6 hover:bg-[#2a2a31] transition-all duration-300 mb-6`}
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ 
+                          opacity: 1, 
+                          y: 0,
+                          transition: {
+                            type: "spring",
+                            bounce: 0.4,
+                            duration: 0.8,
+                            delay: index * 0.2
+                          }
+                        }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        whileHover={{ 
+                          scale: 1.02,
+                          transition: { type: "spring", bounce: 0.4 }
+                        }}
+                        style={{
+                          boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
+                        }}
+                      >
+                        <div className="flex flex-col sm:flex-row justify-between items-start gap-4">
+                          <div>
+                            <h3 className="text-3xl font-semibold mb-3">{item.position}</h3>
+                            <p className="text-accent text-xl">{item.company}</p>
+                          </div>
+                          <span className="text-white/60 text-base bg-[#1a1a1a] px-6 py-2.5 rounded-full">{item.duration}</span>
+                        </div>
                         
-                      </li>
+                        <p className="text-white/70 text-lg leading-relaxed">
+                          {item.description}
+                        </p>
+                        
+                        <div className="flex flex-wrap gap-3">
+                          {item.technologies.map((tech, techIndex) => (
+                            <span 
+                              key={techIndex}
+                              className="px-5 py-2 bg-accent/10 text-accent rounded-full text-base"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </TabsContent>
+                    
+            <TabsContent value="skills" className="w-full h-full">
+              <div className="flex flex-col h-full">
+                <div className="max-w-[800px] mx-auto mb-16 text-center">
+                  <motion.h3 
+                    className="text-4xl font-bold mb-6"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    {skills.title}
+                  </motion.h3>
+                  <motion.p 
+                    className="text-white/60 text-lg leading-relaxed"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                  >
+                    {skills.description}
+                  </motion.p>
+                </div>
+
+                <div className="max-w-[1000px] mx-auto px-4">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                    {skills.skillList.map((skill, index) => {
+                      const IconComponent = skill.icon;
+                      return (
+                        <motion.div 
+                          key={index} 
+                          className="bg-[#232329] aspect-square rounded-xl p-8 group hover:bg-[#2a2a31] transition-all duration-300"
+                          initial={{ opacity: 0, y: 50 }}
+                          whileInView={{ 
+                            opacity: 1, 
+                            y: 0,
+                            transition: {
+                              type: "spring",
+                              bounce: 0.4,
+                              duration: 0.8,
+                              delay: index * 0.1
+                            }
+                          }}
+                          viewport={{ once: true, margin: "-100px" }}
+                          whileHover={{ 
+                            scale: 1.05,
+                            transition: { type: "spring", bounce: 0.4 }
+                          }}
+                        >
+                          <div className="w-full h-full flex flex-col items-center justify-center gap-6">
+                            <div className="text-6xl opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" style={{ color: skill.color }}>
+                              <IconComponent />
+                            </div>
+                            <p className="text-white/70 group-hover:text-white text-lg font-medium transition-colors duration-300">
+                              {skill.name}
+                            </p>
+                          </div>
+                        </motion.div>
                       );
                     })}
-                  </ul>
+                  </div>
                 </div>
-              </TabsContent>
+              </div>
+            </TabsContent>
 
-              <TabsContent value="about" className="w-full text-center xl:text-left">
-                <div className="flex flex-col gap-[30px] ">
-                  <h3 className="text-4xl font-bold">{about.title}</h3>
-                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{about.description}</p>
-                  <ul className="max-w-[620px] mx-auto xl:mx-0 gap-y-6 grid grid-cols-1 xl:grid-cols-2">
-                    {about.info.map((item,index)=>{
-
-                      return <li key={index} className="flexitems-center justify-center xl:justify-start gap-4">
-                        <span>{item.fieldName}</span>
-                        <span>{item.fieldValue}</span>
-                      </li>
-                    })}
-                  </ul>
+            <TabsContent value="about" className="w-full">
+              <div className="flex flex-col gap-[30px]">
+                <div className="text-center">
+                  <h3 className="text-4xl font-bold mb-4">{about.title}</h3>
+                  <p className="max-w-[800px] text-white/60 mx-auto mb-8">{about.description}</p>
                 </div>
-              </TabsContent>
-            </div>
-          </Tabs>
-        </div>
-    </motion.div>
+                
+                <Carousel
+                  opts={{
+                    align: "start",
+                    loop: true,
+                  }}
+                  className="w-full max-w-5xl mx-auto"
+                >
+                  <CarouselContent>
+                    {about.info.map((item, index) => (
+                      <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                        <div className="p-1">
+                          <Card className="bg-[#232329] border-none">
+                            <CardContent className="flex flex-col items-center justify-center p-6 min-h-[150px]">
+                              <h4 className="text-accent text-lg mb-2">{item.fieldName}</h4>
+                              <p className="text-white/80 text-center">{item.fieldValue}</p>
+                            </CardContent>
+                          </Card>
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <div className="flex items-center justify-center gap-2 mt-8">
+                    <CarouselPrevious className="static bg-[#00ff9d] text-black hover:bg-[#00ff9d]/80 translate-x-0" />
+                    <CarouselNext className="static bg-[#00ff9d] text-black hover:bg-[#00ff9d]/80 translate-x-0" />
+                  </div>
+                </Carousel>
+              </div>
+            </TabsContent>
+          </div>
+        </Tabs>
+      </div>
+    </div>
   )
 }
 

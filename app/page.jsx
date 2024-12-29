@@ -1,13 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
 import { useState, useEffect } from 'react';
 import { GenerateCV } from "@/components/GenerateCV";
 
 const HomePage = () => {
   const [repos, setRepos] = useState([]);
-  const username = "codriot"; // Replace with your GitHub username
+  const username = "codriot";
 
   useEffect(() => {
     const fetchRepos = async () => {
@@ -24,34 +24,61 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="bg-black text-white min-h-screen flex flex-col items-center justify-center">
-      {/* Hero Section */}
-      <main className="flex flex-col-reverse xl:flex-row items-center justify-center gap-10 px-10 xl:px-20 mt-20">
-        {/* Text Section */}
-        <div className="text-center xl:text-left max-w-lg">
-          <p className="text-lg text-green-500">Software Developer</p>
-          <h1 className="text-5xl font-bold my-4">
-            Hello, I'm <span className="text-green-500">Luke Coleman</span>
-          </h1>
-          <p className="text-white/70 mb-6">
-            I excel at crafting elegant digital experiences and I am proficient in various programming languages and technologies.
-          </p>
-          <div className="flex justify-center xl:justify-start items-center gap-4">
-            <GenerateCV repos={repos} />
-            <div className="flex gap-4 text-xl">
-              <a href="#" className="hover:text-green-500 transition">
-                <FaLinkedin />
-              </a>
-              <a href="#" className="hover:text-green-500 transition">
-                <FaGithub />
-              </a>
-              <a href="#" className="hover:text-green-500 transition">
-                <FaTwitter />
-              </a>
+    <div className="bg-black text-white min-h-screen">
+      <div className="container mx-auto flex items-center justify-between h-screen">
+        {/* Sol Taraf - Text Section */}
+        <div className="w-1/2 pr-8">
+          <div className="max-w-2xl">
+            <p className="text-xl text-green-500 mb-4">Software Developer</p>
+            <h1 className="text-6xl font-bold mb-6">
+             Selam, ben <span className="text-green-500">Mustafa Al</span>
+            </h1>
+            <p className="text-l text-white/70 mb-8">
+            Ben Codriot, yazılım geliştirme dünyasında uzmanlaşmış freelance bir geliştiriciyim. Web uygulamalarından backend çözümlerine, frontend tasarımından DevOps süreçlerine ve test otomasyonlarına kadar yazılım yaşam döngüsünün her aşamasında tecrübeye sahibim.
+            </p>
+            <div className="flex items-center gap-6">
+              <GenerateCV repos={repos} />
+              <div className="flex gap-6 text-2xl">
+                <a 
+                  href="https://github.com/codriot"
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover:text-green-500 transition"
+                >
+                  <FaGithub />
+                </a>
+                <a 
+                  href="https://twitter.com/10VBacik"
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover:text-green-500 transition"
+                >
+                  <FaTwitter />
+                </a>
+                <a 
+                  href="https://instagram.com/hardwareandro10" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover:text-green-500 transition"
+                >
+                  <FaInstagram />
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </main>
+
+        {/* Sağ Taraf - Image Section */}
+        <div className="w-1/2 relative h-[80vh]">
+          <Image
+            src="/backgroundimage/photo.png"
+            alt="Hero Image"
+            fill
+            className="object-contain"
+            priority
+          />
+        </div>
+      </div>
     </div>
   );
 };

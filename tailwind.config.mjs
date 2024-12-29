@@ -21,6 +21,9 @@ export default {
 		primary:["var(--font-jetbrainsMono)"],
 	},
   	extend: {
+  		animation: {
+  			'spin-slow': 'spin 20s linear infinite',
+  		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

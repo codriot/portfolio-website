@@ -14,14 +14,14 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
 
-// İletişim bilgileri
+// İletişim bilgileri için sabit değerler
 const contactInfo = {
   phone: "536 222 81 06",
   email: "yusuf.akcal02@gmail.com",
   address: "Çağış Kampüsü, Bigadiç/Balıkesir"
 };
 
-// Servis seçenekleri
+// Servis seçenekleri listesi
 const services = [
   "Web Geliştirme",
   "Mobil Uygulama Geliştirme",
@@ -31,6 +31,7 @@ const services = [
 ];
 
 export default function ContactPage() {
+  // Form verilerinin state yönetimi
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -39,13 +40,16 @@ export default function ContactPage() {
     service: '',
     message: ''
   });
+  // Form gönderim durumu için state
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Form gönderim işleyicisi
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
+      // API'ye form verilerinin gönderilmesi
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -55,7 +59,9 @@ export default function ContactPage() {
       });
 
       if (response.ok) {
+        // Başarılı gönderim durumu
         toast.success("Mesaj başarıyla gönderildi!");
+        // Form alanlarının temizlenmesi
         setFormData({
           firstName: '',
           lastName: '',
@@ -65,15 +71,18 @@ export default function ContactPage() {
           message: ''
         });
       } else {
+        // Hata durumu
         toast.error("Mesaj gönderilemedi. Lütfen tekrar deneyin.");
       }
     } catch (error) {
+      // Bağlantı hatası durumu
       toast.error("Bir hata oluştu. Lütfen daha sonra tekrar deneyin.");
     } finally {
       setIsSubmitting(false);
     }
   };
 
+  // Form input değişikliklerini izleyen fonksiyon
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -83,6 +92,7 @@ export default function ContactPage() {
   };
 
   return (
+    // Sayfa container'ı - Framer Motion ile sayfa geçiş animasyonu
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -97,7 +107,9 @@ export default function ContactPage() {
             Aşağıdaki formu doldurun, en kısa sürede size geri dönüş yapacağım.
           </p>
 
+          {/* İletişim Formu */}
           <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Ad Soyad Alanları */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <Input
                 name="firstName"
@@ -117,6 +129,7 @@ export default function ContactPage() {
               />
             </div>
 
+            {/* İletişim Bilgileri Alanları */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <Input
                 name="email"
@@ -138,6 +151,7 @@ export default function ContactPage() {
               />
             </div>
 
+            {/* Hizmet Seçimi */}
             <Select 
               value={formData.service} 
               onValueChange={(value) => setFormData(prev => ({ ...prev, service: value }))}
@@ -159,6 +173,7 @@ export default function ContactPage() {
               </SelectContent>
             </Select>
 
+            {/* Mesaj Alanı */}
             <Textarea
               name="message"
               placeholder="Mesajınızı buraya yazın."
@@ -168,6 +183,7 @@ export default function ContactPage() {
               required
             />
 
+            {/* Gönder Butonu */}
             <Button
               type="submit"
               className="bg-[#00ff9d] text-black hover:bg-[#00cc7d] transition-colors px-8"
@@ -178,9 +194,9 @@ export default function ContactPage() {
           </form>
         </div>
 
-        {/* İletişim Bilgileri */}
+        {/* İletişim Bilgileri Kartları */}
         <div className="space-y-6">
-          {/* Telefon */}
+          {/* Telefon Kartı */}
           <div className="flex items-center gap-4 bg-[#232323] p-4 rounded-xl">
             <div className="bg-[#1a1a1a] p-3 rounded-lg">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-[#00ff9d]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -193,7 +209,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Email */}
+          {/* Email Kartı */}
           <div className="flex items-center gap-4 bg-[#232323] p-4 rounded-xl">
             <div className="bg-[#1a1a1a] p-3 rounded-lg">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-[#00ff9d]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -206,7 +222,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Adres */}
+          {/* Adres Kartı */}
           <div className="flex items-center gap-4 bg-[#232323] p-4 rounded-xl">
             <div className="bg-[#1a1a1a] p-3 rounded-lg">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-[#00ff9d]" fill="none" viewBox="0 0 24 24" stroke="currentColor">

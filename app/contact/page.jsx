@@ -16,16 +16,15 @@ import { toast } from "sonner";
 
 // İletişim bilgileri için sabit değerler
 const contactInfo = {
-  phone: "536 222 81 06",
-  email: "yusuf.akcal02@gmail.com",
+  phone: "551 965 3036",
+  email: "mustafa.al10@yahoo.com",
   address: "Çağış Kampüsü, Bigadiç/Balıkesir"
 };
 
 // Servis seçenekleri listesi
 const services = [
-  "Web Geliştirme",
   "Mobil Uygulama Geliştirme",
-  "UI/UX Tasarım",
+  "Backend Geliştirme",
   "Danışmanlık",
   "Diğer"
 ];

@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 // Kart animasyonları için variant tanımlamaları
 const cardVariants = {
@@ -49,18 +48,10 @@ export default function ExperienceCard({ experience }) {
             <h3 className="text-2xl font-bold group-hover:text-black">{experience.role}</h3>
             <p className="text-gray-400 group-hover:text-black">{experience.period}</p>
           </div>
-          {/* Şirket logosu */}
-          <Image
-            src={experience.icon}
-            alt={experience.company}
-            width={40}
-            height={40}
-            className="group-hover:brightness-0" // Hover'da logo siyaha dönüşür
-          />
         </div>
         {/* Deneyim açıklaması */}
         <p className="text-gray-300 group-hover:text-black">{experience.description}</p>
       </div>
     </motion.div>
   );
-} 
+}

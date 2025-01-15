@@ -22,7 +22,8 @@ import {
   SiMongodb,
   SiPostgresql,
   SiRedux,
-  SiFirebase
+  SiFirebase,
+  SiFlutter
 } from "react-icons/si"
 
 import {
@@ -38,15 +39,15 @@ import { motion } from "framer-motion";
 
 export const about = {
   title: "Hakkımda",
-  description: "Modern web teknolojilerinde uzmanlaşmış bir Full Stack Geliştiriciyim. React, Next.js ve Node.js kullanarak ölçeklenebilir web uygulamaları geliştiriyorum. Hem frontend hem de backend geliştirmede güçlü bir temele sahip olarak, verimli ve kullanıcı dostu çözümler üretmeye odaklanıyorum.",
+  description: "Modern teknolojilerde uzmanlaşmış bir Mobil Geliştiriciyim. Flutter kullanarak ölçeklenebilir mobil uygulamalar geliştiriyorum. Mobil geliştirmede güçlü bir temele sahip olarak, verimli ve kullanıcı dostu çözümler üretmeye odaklanıyorum.",
   info: [
     {
       fieldName: "İsim",
-      fieldValue: "Yusuf Akçal"
+      fieldValue: "Mustafa Al"
     },
     {
       fieldName: "Konum",
-      fieldValue: "İstanbul, Türkiye"
+      fieldValue: "Balıkesir, Türkiye"
     },
     {
       fieldName: "Eğitim",
@@ -54,15 +55,15 @@ export const about = {
     },
     {
       fieldName: "Pozisyon",
-      fieldValue: "Full Stack Geliştirici"
+      fieldValue: "Mobil Geliştirici"
     },
     {
       fieldName: "Deneyim",
-      fieldValue: "Junior"
+      fieldValue: "Junior/mid-level"
     },
     {
       fieldName: "Diller",
-      fieldValue: "Türkçe (Anadil), İngilizce (Ortalama))"
+      fieldValue: "Türkçe (Anadil), İngilizce (B2)"
     }
   ]
 };
@@ -70,43 +71,64 @@ export const about = {
 export const experience = {
   icon:"/assets/resume/badge.svg",
   title:"Deneyimler",
-  description:"Modern web teknolojileri ve yazılım geliştirme alanında edindiğim deneyimler ile kullanıcı odaklı, ölçeklenebilir ve sürdürülebilir çözümler üretiyorum. Agile metodolojileri benimseyerek, takım çalışmasına ve sürekli öğrenmeye önem veriyorum.",
+  description:"Modern teknolojileri ve yazılım geliştirme alanında edindiğim deneyimler ile kullanıcı odaklı, ölçeklenebilir ve sürdürülebilir çözümler üretiyorum. Agile metodolojileri benimseyerek, takım çalışmasına ve sürekli öğrenmeye önem veriyorum.",
   items:[
     {
-      company:"Tech Solution Inc",
-      position:"Frontend Developer",
-      duration:"2022-present",
-      description: "Modern web teknolojileri kullanarak kullanıcı arayüzleri geliştirdim ve performans optimizasyonları gerçekleştirdim.",
-      technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS"]
+      company:"Türkiye Yazılım",
+      position:"Mobile Developer",
+      duration:"2024 Temmuz-günümüz",
+      description: "Flutter kullanarak kurumsal mobil uygulamaları geliştirdim. Modern UI/UX pratiklerini uyguladım ve performans optimizasyonları gerçekleştirdim.",
+      technologies: ["Flutter", "Firebase", "Unit test", "CI/CD"]
     },
-    {
-      company:"E commerce Startup",
-      position:"Freelance Web Developer",
-      duration:"2020-2021",
-      description: "E-ticaret platformları için özel çözümler geliştirdim ve mevcut sistemleri optimize ettim.",
-      technologies: ["Node.js", "React", "MongoDB", "Express.js"]
-    },
-    {
-      company:"Tech Academy",
-      position:"Teaching Assistant",
-      duration:"2019-2020",
-      description: "Web geliştirme kurslarında öğrencilere mentorluk yaptım ve teknik destek sağladım.",
-      technologies: ["HTML", "CSS", "JavaScript", "Git"]
-    },
-    {
-      company:"Software Development",
-      position:"Teaching Assistant",
-      duration:"2019-2020",
+        {
+      company:"Misya Topluluğu",
+      position:"Mentor",
+      duration:"Kasım 2024-günümüz",
       description: "Yazılım geliştirme süreçlerinde öğrencilere rehberlik ettim ve proje yönetiminde destek oldum.",
-      technologies: ["Python", "Java", "SQL", "Agile"]
+      technologies: ["Flutter", "Firebase", " Git ve Github", "Agile"]
     },
+    {
+      company:"Türkiye Yazılım",
+      position:"Mobile Developer Intern",
+      duration:"Temmuz 2024 - Ağustos 2024",
+      description: "Flutter ile bir oyun bir mobil uygulama geliştirdim. Veritabanı mimarisi ve API entegrasyonlarını yönettim, test otomasyonları yazdım.",
+      technologies: ["Flutter", "Firebase", "Flutter Flame", "Tiled"]
+    },
+    {
+      company:"Balıkesir Üniversitesi",
+      position:"IT Support Specialist",
+      duration:"2023 Kasım - 2025 Ocak",
+      description: "Balıkesir Üniversitesi rektörlüğünde yarı zamanlı olarak rektörlüğün ve üniversitenin gereksinim duyduğu mobil veyahut web tabanlı yazılımları ürettik.",
+      technologies: ["Flutter","Firebase" ,"Next.js" ,"CSS", "JavaScript", "Git"]
+    },
+
   ]
 };
 
 export const skills = {
   title: "Teknik Yetenekler",
-  description: "Modern web teknolojileri ve yazılım geliştirme alanında sürekli kendimi geliştirmeye odaklanıyorum. Frontend ve backend teknolojilerinde geniş bir yelpazede deneyim sahibiyim. Yeni teknolojileri öğrenmeye ve mevcut bilgilerimi güncellemeye özen gösteriyorum. Projelerimde en güncel ve verimli araçları kullanarak, performans ve kullanıcı deneyimini optimize ediyorum.",
+  description: "Modern teknolojileri ve yazılım geliştirme alanında sürekli kendimi geliştirmeye odaklanıyorum. Mobil teknolojilernde geniş bir yelpazede deneyim sahibiyim. Yeni teknolojileri öğrenmeye ve mevcut bilgilerimi güncellemeye özen gösteriyorum. Projelerimde en güncel ve verimli araçları kullanarak, performans ve kullanıcı deneyimini optimize ediyorum.",
   skillList: [
+        {
+      icon: SiFlutter,
+      name: "Flutter",
+      color: "#02569B"
+    },
+    {
+      icon: SiFirebase,
+      name: "Firebase",
+      color: "#FFCA28"
+    },
+        {
+      icon: FaPython,
+      name: "Python",
+      color: "#3776AB"
+    },
+        {
+      icon: FaGit,
+      name: "Git",
+      color: "#F05032"
+    },
     {
       icon: FaHtml5,
       name: "HTML5",
@@ -156,26 +178,6 @@ export const skills = {
       icon: SiPostgresql,
       name: "PostgreSQL",
       color: "#4169E1"
-    },
-    {
-      icon: SiRedux,
-      name: "Redux",
-      color: "#764ABC"
-    },
-    {
-      icon: SiFirebase,
-      name: "Firebase",
-      color: "#FFCA28"
-    },
-    {
-      icon: FaGit,
-      name: "Git",
-      color: "#F05032"
-    },
-    {
-      icon: FaPython,
-      name: "Python",
-      color: "#3776AB"
     },
     {
       icon: FaJava,

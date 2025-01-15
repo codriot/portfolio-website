@@ -10,10 +10,6 @@ const links=[
         path:"/"
     },
     {
-        name:"Hizmetler",
-        path:"/services"
-    },
-    {
         name:"Özgeçmiş",
         path:"/resume"
     },

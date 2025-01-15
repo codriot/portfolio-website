@@ -4,6 +4,9 @@ const nextConfig = {
         filename: 'bundle.js',
         publicPath: '/dist/',
     },
+    images: {
+        domains: ['avatars.githubusercontent.com'],
+    },
 };
 
 export default nextConfig;

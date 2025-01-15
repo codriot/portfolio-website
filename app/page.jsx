@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { useState, useEffect } from 'react';
 import { GenerateCV } from "@/components/GenerateCV";
 
 const HomePage = () => {
   const [repos, setRepos] = useState([]);
+  const [profileImage, setProfileImage] = useState('');
   const username = "codriot";
 
   useEffect(() => {
@@ -20,7 +21,18 @@ const HomePage = () => {
       }
     };
 
+    const fetchProfileImage = async () => {
+      try {
+        const res = await fetch(`https://api.github.com/users/${username}`);
+        const data = await res.json();
+        setProfileImage(data.avatar_url);
+      } catch (error) {
+        console.error('Failed to fetch GitHub profile image:', error);
+      }
+    };
+
     fetchRepos();
+    fetchProfileImage();
   }, []);
 
   return (
@@ -29,12 +41,12 @@ const HomePage = () => {
         {/* Sol Taraf - Text Section */}
         <div className="w-1/2 pr-8">
           <div className="max-w-2xl">
-            <p className="text-xl text-green-500 mb-4">Software Developer</p>
+            <p className="text-xl text-green-500 mb-4">Mobile Developer</p>
             <h1 className="text-6xl font-bold mb-6">
              Selam, ben <span className="text-green-500">Mustafa Al</span>
             </h1>
             <p className="text-l text-white/70 mb-8">
-            Ben Codriot, yazılım geliştirme dünyasında uzmanlaşmış freelance bir geliştiriciyim. Web uygulamalarından backend çözümlerine, frontend tasarımından DevOps süreçlerine ve test otomasyonlarına kadar yazılım yaşam döngüsünün her aşamasında tecrübeye sahibim.
+            Ben Mustafa, yazılım geliştirme dünyasında bir mobil geliştiriciyim. Web uygulamalarından backend çözümlerine, frontend tasarımından DevOps süreçlerine ve test otomasyonlarına kadar yazılım yaşam döngüsünün her aşamasında tecrübeye sahibim.
             </p>
             <div className="flex items-center gap-6">
               <GenerateCV repos={repos} />
@@ -48,35 +60,38 @@ const HomePage = () => {
                   <FaGithub />
                 </a>
                 <a 
-                  href="https://twitter.com/10VBacik"
+                  href="https://www.linkedin.com/in/mustafa-al-"
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="hover:text-green-500 transition"
                 >
-                  <FaTwitter />
+                  <FaLinkedin />
                 </a>
-                <a 
+                {/* <a 
                   href="https://instagram.com/hardwareandro10" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="hover:text-green-500 transition"
                 >
                   <FaInstagram />
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
         </div>
 
         {/* Sağ Taraf - Image Section */}
-        <div className="w-1/2 relative h-[80vh]">
-          <Image
-            src="/backgroundimage/photo.png"
-            alt="Hero Image"
-            fill
-            className="object-contain"
-            priority
-          />
+        <div className="w-1/2 relative h-[80vh] flex items-center justify-center">
+          {profileImage && (
+            <Image
+              src={profileImage}
+              alt="GitHub Profile Image"
+              width={400}
+              height={400}
+              className="object-contain rounded-full shadow-lg"
+              priority
+            />
+          )}
         </div>
       </div>
     </div>

@@ -6,33 +6,23 @@ import Image from "next/image";
 
 const experiences = [
   {
-    role: "Senior Web Geliştirici",
-    period: "Haziran 2021 - Günümüz",
-    company: "Odeao Labs",
-    icon: "/odeao-labs.svg",
-    description: "Next.js ve React kullanarak kurumsal web uygulamaları geliştirdim. Modern UI/UX pratiklerini uyguladım ve performans optimizasyonları gerçekleştirdim."
+    role: "Mobil Uygulama Geliştirici",
+    period: "Ağustos 2024 - Günümüz",
+    company: "Türkiye Yazılım",
+    description: "Flutter kullanarak kurumsal mobil uygulamaları geliştirdim. Modern UI/UX pratiklerini uyguladım ve performans optimizasyonları gerçekleştirdim."
   },
   {
-    role: "Full Stack Geliştirici",
-    period: "Ocak 2020 - Haziran 2021",
-    company: "Stack3d Lab",
-    icon: "/stack3d-lab.svg",
-    description: "Node.js ve React ile full-stack uygulamalar geliştirdim. Veritabanı mimarisi ve API entegrasyonlarını yönettim."
+    role: "Mobil Uygulama Geliştirici Stajyeri",
+    period: "Temmuz 2024 - Ağustos 2024",
+    company: "Türkiye Yazılım",
+    description: "Flutter ile bir oyun bir mobil uygulama geliştirdim. Veritabanı mimarisi ve API entegrasyonlarını yönettim, test otomasyonları yazdım."
   },
   {
-    role: "Frontend Geliştirici",
-    period: "Mart 2019 - Aralık 2019",
-    company: "Magnolia",
-    icon: "/magnolia.svg",
-    description: "Duyarlı web arayüzleri oluşturdum ve modern tasarım sistemleri uyguladım. UI/UX ekibiyle işbirliği yaptım."
-  },
-  {
-    role: "UI/UX Geliştirici",
-    period: "Haziran 2018 - Şubat 2019",
-    company: "Digital Craft",
-    icon: "/magnolia.svg",
-    description: "Mobil ve web uygulamaları için kullanıcı arayüzleri tasarladım ve geliştirdim. Kullanıcı araştırmaları ve kullanılabilirlik testleri yürüttüm."
-  },
+    role: "IT Destek Uzmanı",
+    period: "Kasım 2023 - Ocak 2025",
+    company: "Balıkesir Üniversitesi Bilgi İşlem Daire Başkanlığı",
+    description: "Balıkesir Üniversitesi rektörlüğünde yarı zamanlı olarak rektörlüğün ve üniversitenin gereksinim duyduğu mobil veyahut web tabanlı yazılımları ürettik."
+  }
 ];
 
 export default function Services() {

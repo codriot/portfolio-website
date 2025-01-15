@@ -5,14 +5,11 @@ import {
   FaCss3Alt,
   FaJs,
   FaReact,
-  FaFigma,
   FaNodeJs,
-  FaNode,
   FaGit,
   FaPython,
   FaJava,
   FaDocker,
-  FaDatabase
 } from "react-icons/fa"
 
 import {
